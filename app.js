@@ -43,7 +43,7 @@ app.use(ctx => {
     responseTime: new Date().toString(),
     query: ctx.request.query,
     body: {...ctx.request.files, ...ctx.request.body}
-  }, null, '\t');
+  }, null, `    `);
 });
 
 app.listen(38002);
