@@ -34,7 +34,7 @@ app.use(koaBody({
 
 
 app.use(ctx => {
-  ctx.body = {
+  ctx.body = JSON.stringify({
     url: ctx.request.url,
     httpVersion: ctx.req.httpVersion,
     method: ctx.request.method,
@@ -43,7 +43,7 @@ app.use(ctx => {
     responseTime: new Date().toString(),
     query: ctx.request.query,
     body: {...ctx.request.files, ...ctx.request.body}
-  };
+  }, null, '\t');
 });
 
 app.listen(38002);
