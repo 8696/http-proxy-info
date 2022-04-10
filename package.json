@@ -1,0 +1,25 @@
+{
+  "name": "http-proxy-info",
+  "version": "1.0.0",
+  "description": "",
+  "main": "index.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/8696/http-proxy-info.git"
+  },
+  "keywords": [],
+  "author": "",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/8696/http-proxy-info/issues"
+  },
+  "homepage": "https://github.com/8696/http-proxy-info#readme",
+  "dependencies": {
+    "@koa/cors": "^3.3.0",
+    "koa": "^2.13.4",
+    "koa-body": "^4.2.0"
+  }
+}
