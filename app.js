@@ -34,6 +34,7 @@ app.use(koaBody({
 
 
 app.use(ctx => {
+  ctx.set('Content-Type', 'application/json;charset=utf-8')
   ctx.body = JSON.stringify({
     url: ctx.request.url,
     httpVersion: ctx.req.httpVersion,
