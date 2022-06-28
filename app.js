@@ -10,6 +10,20 @@ app.use(async (ctx, next) => {
   await next()
 })
 
+function randomString(length) {
+  const chars = '1234567890QWERTYUIOPASDFGHJKLZXCVBNMqazwsxedcrfvtgbyhnujmikolp'.split('');
+
+  if (! length) {
+    length = Math.floor(Math.random() * chars.length);
+  }
+
+  let str = '';
+  for (let i = 0; i < length; i++) {
+    str += chars[Math.floor(Math.random() * chars.length)];
+  }
+  return str;
+}
+
 // 全局捕获异常
 app.use(async (ctx, next) => {
   try {
@@ -43,7 +57,8 @@ app.use(ctx => {
     requestTime: ctx.request.requestTime,
     responseTime: new Date().toString(),
     query: ctx.request.query,
-    body: {...ctx.request.files, ...ctx.request.body}
+    body: {...ctx.request.files, ...ctx.request.body},
+    requestId: randomString(32)
   }, null, `    `);
 });
 
